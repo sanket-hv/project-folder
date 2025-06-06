@@ -1,0 +1,63 @@
+{
+    "USER_ALREADY_EXISTS": "User already exists.",
+    "USERNAME_ALREADY_EXISTS": "Username is already exists.",
+    "USER_CREATED_SUCCESSFULLY": "User created successfully.",
+    "USER_LOGIN_SUCCESSFULLY": "User Logged in Successfully.",
+    "USER_NOT_FOUND": "User not found.",
+    
+    "VENDOR_NOT_FOUND": "Vendor not found.",
+    "VENDOR_FETCHED_SUCCESSFULLY":"Vendor fetched successfully." , 
+    "VENDOR_CREATED_SUCCESSFULLY":"Vendor created successfully." , 
+    "VENDOR_UPDATED_SUCCESSFULLY":"Vendor updated successfully." , 
+    "VENDOR_NOT_UPDATED":"Vendor not updated." ,
+    "VENDOR_DELETED_SUCCESSFULLY":"Vendor deleted successfully." ,
+    "VENDOR_NOT_DELETED":"Vendor not deleted.",
+
+    "PRODUCTS_FETCHED_SUCCESSFULLY": "Products fetched successfully.",
+    "PRODUCT_CREATED_SUCCESSFULLY": "Product created successfully.",
+    "PRODUCT_UPDATED_SUCCESSFULLY": "Product updated successfully.",
+    "PRODUCT_DELETED_SUCCESSFULLY": "Product deleted successfully.",
+    "PRODUCT_NAME_ALREADY_EXISTS": "Product name already exists.",
+    "PRODUCT_NOT_FOUND": "Product not found.",
+
+    "CATEGORY_NOT_FOUND": "Category not found.",
+    "CATEGORIES_FETCHED_SUCCESSFULLY": "Categories fetched successfully.",
+    "CATEGORIES_NAME_FETCHED_SUCCESSFULLY": "Categories Name fetched successfully.",
+    "CATEGORY_CREATED_SUCCESSFULLY": "Category created successfully.",
+    "CATEGORY_UPDATED_SUCCESSFULLY": "Category updated successfully.",
+    "CATEGORY_DELETED_SUCCESSFULLY": "Category deleted successfully.",
+    "CATEGORY_NAME_EXISTS": "Category Name Already Exists.",
+
+    "ROLE_FETCHED_SUCCESSFULLY": "Role fetched successfully.",
+    "ROLE_CREATED_SUCCESSFULLY": "Role created successfully.",
+
+    "INQUIRIES_FETCHED_SUCCESSFULLY": "Inquiries fetched successfully.",
+    "INQUIRY_CREATED_SUCCESSFULLY": "Inquiry created successfully.",
+
+    "PAYMENTDETAILS_FETCHED_SUCCESSFULLY": "Payment details fetched successfully.",
+    "PAYMENTDETAILS_CREATED_SUCCESSFULLY": "Payment details created successfully.",
+    "PAYMENTDETAILS_UPDATED_SUCCESSFULLY": "Payment details updated successfully.",
+    "PAYMENTDETAILS_DELETED_SUCCESSFULLY": "Payment details deleted successfully.",
+
+    "SITESETTINGS_FETCHED_SUCCESSFULLY": "Vendor settings fetched successfully.",
+    "SITESETTINGS_CREATED_SUCCESSFULLY": "Vendor settings created successfully.",
+    "SITESETTINGS_UPDATED_SUCCESSFULLY": "Vendor settings updated successfully.",
+    "SITESETTINGS_DELETED_SUCCESSFULLY": "Vendor settings deleted successfully.",
+    "SITESETTINGS_ALREADY_EXISTS": "Vendor settings already exists.",
+    "SITESETTINGS_NOT_FOUND": "Vendor settings not found.",
+
+    "EMAIL_ALREADY_EXISTS": "Email already exists.",
+
+    "IMAGES_ARE_REQUIRED": "Images are required.",
+    "IMAGES_UPLOADED_SUCCESSFULLY": "Images uploaded successfully.",
+
+    "ALL_REQUIRED": "All fields are required!",
+    "TOKEN_REQUIRED": "Token required.",
+    "OK": "OK.",
+    "CREATED": "Created.",
+    "NOT_FOUND": "Not Found.",
+    "BAD_REQUEST": "Bad request.",
+    "UNAUTHORIZED": "Unauthorized.",
+    "INTERNAL_SERVER_ERROR": "Internal Server Error.",
+    "EXISTED": "Already exists."
+}
