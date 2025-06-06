@@ -7,7 +7,7 @@ const app = express();
 const UPLOADS_FOLDER = path.join(__dirname, 'uploads');
 
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 if (!fs.existsSync(UPLOADS_FOLDER)) {
   fs.mkdirSync(UPLOADS_FOLDER, { recursive: true });

@@ -13,7 +13,7 @@ export const GetCategory = async (id) => {
 };
 
 export const PutCategory = async (id, formData) => {
-  return await put(`${url.CATEGORY}/${id}`, formData, config);
+  return await put(`${url.CATEGORY}/${id}`, formData, getApiConfig(true));
 };
 
 export const DeleteCategory = async (id) => {
