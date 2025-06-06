@@ -103,8 +103,6 @@ const CategoryContent = ({
 
     try {
       const res = await uploadImage(formDataToSend);
-      // setImage(res.payload.imagePaths);
-      setImage(formDataToSend);
       toast.success("Image uploaded successfully!");
     } catch (error) {
       toast.error("Image upload failed. Please try again.");
@@ -155,30 +153,14 @@ const CategoryContent = ({
 
     formDataToSend.append("categoryImages", image);
 
-    // const payload = {
-    //   name: formData.name,
-    //   categoryImages: formData.categoryImages,
-    //   ...(type !== "editSubCategory" &&
-    //     type !== "editCategory" &&
-    //     categoryId &&
-    //     !subcategory && { parentId: categoryId }),
-    // };
-
-    console.log("image formdata", formDataToSend);
-
     try {
-      const config = {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      };
 
       const res =
         subcategory && type === "editSubCategory"
           ? await PutCategory(subcategory, formDataToSend)
           : categoryId && type === "editCategory"
           ? await PutCategory(categoryId, formDataToSend)
-          : await CreateCategory(formDataToSend, config);
+          : await CreateCategory(formDataToSend);
 
       if (res) {
         toast.success("Category saved successfully!");
@@ -193,18 +175,7 @@ const CategoryContent = ({
 
     handleClose();
   };
-
-  const handleSubmitThis = async () => {
-    const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-
-    formData.categoryImages.forEach((imgObj) => {
-      formDataToSend.append("categoryImages", imgObj.file);
-    });
-
-    await axios.post("http://localhost:8080/api/category", formDataToSend);
-  };
-
+  
   const handleFileUploadClick = () => {
     document.getElementById("file-upload").click();
   };
@@ -333,7 +304,7 @@ const CategoryContent = ({
           Cancel
         </Button>
         <Button
-          onClick={handleSubmitThis}
+          onClick={handleSubmit}
           sx={{
             backgroundColor: "rgb(0, 99, 109)",
             color: "white",

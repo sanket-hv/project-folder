@@ -6,7 +6,7 @@ export const getApiConfig = (isFormData = false) => {
 
   if (token) {
     let headers = {
-      authtoken: token,
+      Authtoken: token,
     };
 
     if (isFormData) {

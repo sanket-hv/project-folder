@@ -5,7 +5,7 @@ import { getApiConfig } from "../config";
 const config = getApiConfig();
 
 export const CreateCategory = async (formData) => {
-  return await post(`${url.CATEGORY}`, formData, config);
+  return await post(`${url.CATEGORY}`, formData, getApiConfig(true));
 };
 
 export const GetCategory = async (id) => {
