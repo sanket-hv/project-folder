@@ -82,9 +82,7 @@ module.exports = {
   createCategory: async (req, res) => {
     try {
       if (req.files && req.files.length > 0) {
-        req.body.categoryImages = req.files.map(
-          (file) => `/uploads/${file.filename}`
-        );
+        req.body.categoryImages = req.files.map(file => file.path);
       } else {
         req.body.categoryImages = [];
       }
