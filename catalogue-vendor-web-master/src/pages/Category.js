@@ -49,6 +49,10 @@ const Category = () => {
     subcategory = null,
     type = ""
   ) => {
+    // console.log("cat id", categoryId);
+    // console.log("sub cat id", subcategory);
+    // console.log("type ", type);
+    
     setSelectedCategoryId(categoryId);
     setSelectedSubcategory(subcategory);
     setModalType(type);
@@ -261,8 +265,11 @@ const Category = () => {
                 <Card
                   sx={{
                     marginBottom: 2,
+                    width: "100%",
+                    maxWidth: { xs: "100%", sm: "400px", md: "350px" },
                     textAlign: "start",
                     padding: 2,
+                    alignSelf: "flex-start",
                     boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
                     borderRadius: "8px",
                   }}
@@ -303,7 +310,8 @@ const Category = () => {
                       <Card
                         key={sub.id}
                         sx={{
-                          width: "calc(23% - 16px)",
+                          // width: "calc(23% - 16px)",
+                          width: {sm:"calc(100% / 1)",md:"calc(100% / 2)",lg:"calc(100% / 3)",xl:"calc(23% - 16px)"},
                           textAlign: "start",
                           padding: 2,
                           boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
@@ -361,12 +369,15 @@ const Category = () => {
           </Box>
         ))}
       </Box>
+
+        
       <CommonModal
         open={modalOpen}
         handleClose={handleModalClose}
         title={selectedCategoryId ? "Add Sub Category" : "Add New Category"}
       >
         <CategoryContent
+          parentId={selectedCategoryId ? selectedCategoryId : null}
           handleClose={handleModalClose}
           getAllCategories={getAllCategories}
           categoryId={selectedCategoryId}

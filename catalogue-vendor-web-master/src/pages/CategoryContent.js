@@ -19,8 +19,10 @@ const CategoryContent = ({
   categoryId,
   subcategory,
   setSelectedCategoryId,
+  parentId,
   type,
 }) => {
+  
   const [formData, setFormData] = useState({
     name: "",
     categoryImages: [],
@@ -152,15 +154,19 @@ const CategoryContent = ({
     formDataToSend.append("name", formData.name);
 
     formDataToSend.append("categoryImages", image);
+    if (parentId) {
+      formDataToSend.append("parentId", parentId);
+    }
 
     try {
-
-      const res =
-        subcategory && type === "editSubCategory"
-          ? await PutCategory(subcategory, formDataToSend)
-          : categoryId && type === "editCategory"
-          ? await PutCategory(categoryId, formDataToSend)
-          : await CreateCategory(formDataToSend);
+      let res;
+      if (subcategory && type === "editSubCategory") {
+        res = await PutCategory(subcategory, formDataToSend);
+      } else if (categoryId && type === "editCategory") {
+        res = await PutCategory(categoryId, formDataToSend);
+      } else {
+        res = await CreateCategory(formDataToSend);
+      }
 
       if (res) {
         toast.success("Category saved successfully!");
@@ -175,7 +181,7 @@ const CategoryContent = ({
 
     handleClose();
   };
-  
+
   const handleFileUploadClick = () => {
     document.getElementById("file-upload").click();
   };

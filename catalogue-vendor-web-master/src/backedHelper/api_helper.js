@@ -23,26 +23,24 @@ export const get = async (url, config = {}) => {
 };
 
 //* POST API
-
 export const post = async (url, data, config = {}) => {
   const token = localStorage.getItem("authToken");
-  // console.log(`token ${token} and url ${url}`);
 
   const headers = {
     ...(config.headers || {}),
-    'Authtoken': `Bearer ${token}`
+    Authtoken: `Bearer ${token}`,
   };
 
   if (data instanceof FormData) {
-    delete headers['Content-Type'];
+    delete headers["Content-Type"];
   } else {
-    headers['Content-Type'] = 'application/json';
+    headers["Content-Type"] = "application/json";
     data = JSON.stringify(data);
   }
 
   try {
-    const response = await axiosApi.post(url, data, { ...config});
-    if(response.status){
+    const response = await axiosApi.post(url, data, { ...config });
+    if (response.status) {
     }
     return response.data;
   } catch (error) {
@@ -55,42 +53,20 @@ export const post = async (url, data, config = {}) => {
   }
 };
 
-
-// export const post = async (url, data, config = {}) => {
-
-//   const token = localStorage.getItem("authToken");
-  
-//   console.log(`token ${token} and url ${url}`);
-  
-//   const header = {
-//     ...(config.headers || {}),
-//     'Authtoken':`Bearer ${token}`
-//   }
-
-//    if(data instanceof FormData){
-//       delete Headers['Content-Type']
-//     }
-//     else{
-//       Headers['Content-Type'] = 'application/json';
-//       data = JSON.stringify(data);
-//     }
-//   try {
-//     const response = await axiosApi.post(url, data, { ...config },header);
-//     if (response.status) {
-//     }
-//     return response.data;
-//   } catch (error) {
-//     if (axios.isAxiosError(error)) {
-//       if (error.response?.status === 401 || error?.response?.data?.logout) {
-//       }
-//     }
-
-//     throw error;
-//   }
-// };
-
 //* PUT API
 export const put = async (url, data, config = {}) => {
+  const token = localStorage.getItem("authToken");
+  const headers = {
+    ...(config.headers || {}),
+    Authtoken: `Bearer ${token}`,
+  };
+  if (data instanceof FormData) {
+    delete headers["Content-Type"];
+  } else {
+    headers["Content-Type"] = "application/json";
+    data = JSON.stringify(data);
+  }
+
   try {
     const response = await axiosApi.put(url, data, { ...config });
     if (response.status) {

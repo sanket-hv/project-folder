@@ -81,20 +81,20 @@ module.exports = {
   /* Create Product Category API */
   createCategory: async (req, res) => {
     try {
-       const baseUrl = `${req.protocol}://${req.get('host')}`;
-    if (req.files && req.files.length > 0) {
-      req.body.categoryImages = req.files.map(
-        file => `${baseUrl}/uploads/${file.filename}`
-      );
-    }
-      else {
+      const baseUrl = `${req.protocol}://${req.get("host")}`;
+      if (req.files && req.files.length > 0) {
+        req.body.categoryImages = req.files.map(
+          (file) => `${baseUrl}/uploads/${file.filename}`
+        );
+      } else {
         req.body.categoryImages = [];
       }
+
       const vendor = await getSingleItem(DB.vendor, { userId: req.user._id });
       if (!vendor)
         return response.NOT_FOUND({ res, message: messages.VENDOR_NOT_FOUND });
       req.body.vendorId = vendor._id;
-
+      
       req.body.parentId ? req.body.parentId : null;
 
       req.body.friendlyURL = req.body.name
